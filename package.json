@@ -1,0 +1,48 @@
+{
+  "name": "allo",
+  "version": "1.0.0",
+  "description": "Google Allo is a smart messaging app that helps you say more and do more. Express yourself better with stickers, doodles, and HUGE emojis & text. Allo also brings you the Google Assistant.",
+  "main": "app/main.js",
+  "maintainers": [
+    "Kerron Gordon"
+  ],
+  "author": {
+    "name": "Kerron Gordon",
+    "email": "kgpsounds.com@gmail.com",
+    "url": "https://kerron-gordon.firebaseapp.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/kerrongordon/google-allo-linux",
+  "build": {
+    "appId": "com.github.kerrongordon.allo",
+    "productName": "Allo",
+    "linux": {
+      "category": "Network",
+      "icon": "app/icon/",
+      "target": [
+        "zip",
+        "deb",
+        "rpm",
+        "tar.gz",
+        "tar.xz",
+        "AppImage",
+        "pacman"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "yarn build && electron ./app/main.js",
+    "prod": "yarn build && build --linux"
+  },
+  "devDependencies": {
+    "electron": "^3.0.0",
+    "electron-builder": "^20.0.4",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "electron-context-menu": "^0.10.0"
+  }
+}
