@@ -1,6 +1,6 @@
 {
   "name": "allo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Google Allo is a smart messaging app that helps you say more and do more. Express yourself better with stickers, doodles, and HUGE emojis & text. Allo also brings you the Google Assistant.",
   "main": "app/main.js",
   "maintainers": [
