@@ -9,7 +9,7 @@ require('electron-context-menu')({
 
 let mainWindow: Electron.BrowserWindow
 const appURL = 'https://allo.google.com/web'
-const appName = 'Allo linux'
+const appName = 'Allo'
 const bgColor = '#fffff'
 
 const createWindow = () => {
@@ -18,12 +18,14 @@ const createWindow = () => {
     height: 600,
     icon: path.join(__dirname, 'icon/64x64.png'),
     width: 1000,
+    show: false,
   })
 
   mainWindow.loadURL(appURL)
   mainWindow.setTitle(appName)
-  mainWindow.setMenuBarVisibility(false)
   mainWindow.setAutoHideMenuBar(true)
+  mainWindow.setMenuBarVisibility(false)
+  mainWindow.on('ready-to-show', () => mainWindow.show())
 }
 
 app.on('ready', () => createWindow())
